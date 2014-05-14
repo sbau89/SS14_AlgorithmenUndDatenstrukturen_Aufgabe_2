@@ -12,6 +12,7 @@ import java.util.List;
  * @param <V> Knotentyp.
  */
 public interface Graph<V> {
+    
     /**
      * FÃ¼gt neuen Knoten zum Graph dazu.
      * @param v Knoten

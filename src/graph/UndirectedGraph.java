@@ -14,6 +14,7 @@ package graph;
  * @param <V> Knotentyp.
  */
 public interface UndirectedGraph<V> extends Graph<V> {
+    
     /**
      * Liefert Grad des Knotens v zurÃ¼ck.
      * Das ist die Anzahl der adjazenten Knoten bzw. inzidenten Kanten zu v.
