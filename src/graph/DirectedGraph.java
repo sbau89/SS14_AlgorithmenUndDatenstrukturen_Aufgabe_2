@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Graph mit gerichteten Kanten.
- * Es ist zu beachten, dass g.addEdge(v,w) 
+ * Es ist zu beachten, dass g.addEdge(v,w)
  * eine gerichtete Kante von v nach w einfÃ¼gt.
  * @author Oliver Bittel
  * @since 21.10.2011
@@ -42,7 +42,7 @@ public interface DirectedGraph<V> extends Graph<V> {
     List<V> getPredecessorVertexList(V v);
 
     /**
-     * Liefert die Liste aller Nachfolgerknoten zu v zurÃ¼ck. 
+     * Liefert die Liste aller Nachfolgerknoten zu v zurÃ¼ck.
      * Das sind alle die Knoten, zu denen eine Kante von v fÃ¼hrt.
      * Methode leistet dasselbe wie
      * {@link Graph#getAdjacentVertexList(java.lang.Object) getAdjacentVertexList}

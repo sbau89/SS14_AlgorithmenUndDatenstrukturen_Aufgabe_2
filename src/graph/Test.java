@@ -6,11 +6,10 @@ import graph.GraphTraversion;
  *
  * @author sbau8_000
  */
-import graph.GraphTraversion;
-
 public class Test extends AdjacencyListUndirectedGraph<Integer> {
 
     public static void main(String[] args) {
+
         //Tiefensuche
         AdjacencyListUndirectedGraph<Integer> tiefe = new AdjacencyListUndirectedGraph<Integer>();
         tiefe.addVertex(0);
@@ -30,6 +29,7 @@ public class Test extends AdjacencyListUndirectedGraph<Integer> {
         System.out.println("Tiefensuche soll: [1, 0, 4, 2, 3, 5]");
         System.out.println("Tiefensuche ist: " + GraphTraversion.depthFirstSearch(tiefe, 1));
         System.out.println("");
+
         //Breitensuche
         AdjacencyListUndirectedGraph<Integer> breite = new AdjacencyListUndirectedGraph<Integer>();
         breite.addVertex(0);

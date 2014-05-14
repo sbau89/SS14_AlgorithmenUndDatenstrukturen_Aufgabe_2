@@ -2,11 +2,11 @@ package graph;
 
 /**
  * Klasse fÃ¼r Kanten.
+ *
  * @author Oliver Bittel
  * @since 21.10.2011
  * @param <V> Knotentyp.
  */
-
 public class Edge<V> {
 
     /**
@@ -24,6 +24,7 @@ public class Edge<V> {
 
     /**
      * Erzeugt neue Kante mit Gewicht 1.
+     *
      * @param source Startknoten.
      * @param target Zielknoten.
      */
@@ -35,6 +36,7 @@ public class Edge<V> {
 
     /**
      * Erzeugt neue Kante mit Gewicht weight.
+     *
      * @param source
      * @param target Startknoten.
      * @param weight Zielknoten.
@@ -47,6 +49,7 @@ public class Edge<V> {
 
     /**
      * Liefert Startknoten zurÃ¼ck.
+     *
      * @return Startknoten.
      */
     public V getSource() {
@@ -55,6 +58,7 @@ public class Edge<V> {
 
     /**
      * Liefert Zielknoten zurÃ¼ck.
+     *
      * @return Zielknoten.
      */
     public V getTarget() {
@@ -63,6 +67,7 @@ public class Edge<V> {
 
     /**
      * Liefert Gewicht der Kante zurÃ¼ck.
+     *
      * @return Gewicht.
      */
     public double getWeight() {
@@ -71,12 +76,15 @@ public class Edge<V> {
 
     /**
      * Liefert String-Darstellung der Kante zurÃ¼ck.
+     *
      * @return String-Darstellung.
      */
-    @Override public String toString() {
-        if (weight == 1)
+    @Override
+    public String toString() {
+        if (weight == 1) {
             return source + " -- " + target;
-        else
+        } else {
             return source + " -- " + target + " (" + weight + ")";
+        }
     }
 }
