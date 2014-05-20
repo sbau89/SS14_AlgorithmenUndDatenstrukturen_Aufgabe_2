@@ -54,7 +54,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
     }
 
     @Override
-    public boolean containsEdge(Object v, Object w) {
+    public boolean containsEdge(V v, V w) {
         if (!predecessorList.containsKey(v)) {
             throw new IllegalArgumentException("Error in: containsEdge");
         }
@@ -62,7 +62,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
     }
 
     @Override
-    public double getWeight(Object v, Object w) {
+    public double getWeight(V v, V w) {
         if (!predecessorList.containsKey(v) || !predecessorList.containsKey(w) || v.equals(w)) {
             throw new IllegalArgumentException("Error in: getWeight");
         }
@@ -110,14 +110,14 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
     }
 
     @Override
-    public List getAdjacentVertexList(Object v) {
+    public List getAdjacentVertexList(V v) {
         List<V> adjacent_vertex_list = new ArrayList<V>();
         adjacent_vertex_list.addAll(successorList.get(v).keySet());
         return adjacent_vertex_list;
     }
 
     @Override
-    public List getIncidentEdgeList(Object v) {
+    public List getIncidentEdgeList(V v) {
         List<String> incident_edge_list = new ArrayList<String>();
         for (Entry<V, Double> k : successorList.get(v).entrySet()) {
             double weight = k.getValue();
@@ -131,31 +131,31 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
     }
 
     @Override
-    public int getOutDegree(Object v) {
+    public int getOutDegree(V v) {
         return successorList.get(v).size();
     }
 
     @Override
-    public int getInDegree(Object v) {
+    public int getInDegree(V v) {
         return predecessorList.get(v).size();
     }
 
     @Override
-    public List getPredecessorVertexList(Object v) {
+    public List getPredecessorVertexList(V v) {
         List<V> predecessor_vertex_list = new ArrayList<V>();
         predecessor_vertex_list.addAll(predecessorList.get(v).keySet());
         return predecessor_vertex_list;
     }
 
     @Override
-    public List getSuccessorVertexList(Object v) {
+    public List getSuccessorVertexList(V v) {
         List<V> successor_vertex_list = new ArrayList<V>();
         successor_vertex_list.addAll(successorList.get(v).keySet());
         return successor_vertex_list;
     }
 
     @Override
-    public List getOutgoingEdgeList(Object v) {
+    public List getOutgoingEdgeList(V v) {
         List<String> outgoint_edges_list = new ArrayList<String>();
         for (Entry<V, Double> k : successorList.get(v).entrySet()) {
             outgoint_edges_list.add(v + " -> " + k.getKey() + "(" + k.getValue() + ")");
@@ -164,7 +164,7 @@ public class AdjacencyListDirectedGraph<V> implements DirectedGraph<V> {
     }
 
     @Override
-    public List getIncomingEdgeList(Object v) {
+    public List getIncomingEdgeList(V v) {
         List<String> incoming_edges_list = new ArrayList<String>();
         for (Entry<V, Double> k : predecessorList.get(v).entrySet()) {
             incoming_edges_list.add(k.getKey() + " -> " + v + "(" + k.getValue() + ")");

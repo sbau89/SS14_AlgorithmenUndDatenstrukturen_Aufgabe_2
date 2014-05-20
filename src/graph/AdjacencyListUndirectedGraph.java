@@ -16,7 +16,7 @@ public class AdjacencyListUndirectedGraph<V> implements UndirectedGraph<V> {
     HashMap<V, HashMap<V, Double>> adjacencyList = new HashMap<V, HashMap<V, Double>>();
 
     @Override
-    public int getDegree(Object v) {
+    public int getDegree(V v) {
         return adjacencyList.get(v).size();
     }
 
@@ -112,7 +112,7 @@ public class AdjacencyListUndirectedGraph<V> implements UndirectedGraph<V> {
     }
 
     @Override
-    public List<V> getAdjacentVertexList(Object v) {
+    public List<V> getAdjacentVertexList(V v) {
         if (!adjacencyList.containsKey(v)) {
             throw new IllegalArgumentException("Error in: getAdjacentVertexList");
         }
